@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_Service", "Employe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{48B22654-B630-4C9C-A13A-CC6E333E18A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "folder", "folder", "{18D70164-9E66-4858-A81B-2FC39054D344}"
+	ProjectSection(SolutionItems) = preProject
+		WebClient\Client.html = WebClient\Client.html
+		WebClient\Client_Script.js = WebClient\Client_Script.js
+		DB.bak = DB.bak
+		WebClient\jquery-3.1.1.js = WebClient\jquery-3.1.1.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
