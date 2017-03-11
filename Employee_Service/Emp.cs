@@ -12,16 +12,16 @@ namespace Employee_Service
     public partial class Emp
     {
         [Key]
-        [DataMember(Name = "ID", Order = 0)]
+        [DataMember(Name = "Emp_ID", Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Emp_ID { get; set; }
 
-        [DataMember(Name = "Name", Order = 1)]
+        [DataMember(Name = "Emp_Name", Order = 1)]
         [Required]
         [StringLength(50)]
         public string Emp_Name { get; set; }
 
-        [DataMember(Name = "Dept_ID", Order = 2)]
+        [DataMember(Name = "DP_ID", Order = 2)]
         public int DP_ID { get; set; }
 
         public virtual Department Department { get; set; }

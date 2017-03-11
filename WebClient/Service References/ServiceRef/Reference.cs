@@ -23,13 +23,13 @@ namespace WebClient.ServiceRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
+        private int Emp_IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private string Emp_NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Dept_IDField;
+        private int DP_IDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -42,40 +42,40 @@ namespace WebClient.ServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
+        public int Emp_ID {
             get {
-                return this.IDField;
+                return this.Emp_IDField;
             }
             set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
+                if ((this.Emp_IDField.Equals(value) != true)) {
+                    this.Emp_IDField = value;
+                    this.RaisePropertyChanged("Emp_ID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public string Emp_Name {
             get {
-                return this.NameField;
+                return this.Emp_NameField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.Emp_NameField, value) != true)) {
+                    this.Emp_NameField = value;
+                    this.RaisePropertyChanged("Emp_Name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public int Dept_ID {
+        public int DP_ID {
             get {
-                return this.Dept_IDField;
+                return this.DP_IDField;
             }
             set {
-                if ((this.Dept_IDField.Equals(value) != true)) {
-                    this.Dept_IDField = value;
-                    this.RaisePropertyChanged("Dept_ID");
+                if ((this.DP_IDField.Equals(value) != true)) {
+                    this.DP_IDField = value;
+                    this.RaisePropertyChanged("DP_ID");
                 }
             }
         }
@@ -100,10 +100,10 @@ namespace WebClient.ServiceRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Dept_IDField;
+        private int DP_IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Dept_NameField;
+        private string DP_NameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -116,27 +116,27 @@ namespace WebClient.ServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Dept_ID {
+        public int DP_ID {
             get {
-                return this.Dept_IDField;
+                return this.DP_IDField;
             }
             set {
-                if ((this.Dept_IDField.Equals(value) != true)) {
-                    this.Dept_IDField = value;
-                    this.RaisePropertyChanged("Dept_ID");
+                if ((this.DP_IDField.Equals(value) != true)) {
+                    this.DP_IDField = value;
+                    this.RaisePropertyChanged("DP_ID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Dept_Name {
+        public string DP_Name {
             get {
-                return this.Dept_NameField;
+                return this.DP_NameField;
             }
             set {
-                if ((object.ReferenceEquals(this.Dept_NameField, value) != true)) {
-                    this.Dept_NameField = value;
-                    this.RaisePropertyChanged("Dept_Name");
+                if ((object.ReferenceEquals(this.DP_NameField, value) != true)) {
+                    this.DP_NameField = value;
+                    this.RaisePropertyChanged("DP_Name");
                 }
             }
         }
@@ -168,10 +168,10 @@ namespace WebClient.ServiceRef {
         System.Threading.Tasks.Task<WebClient.ServiceRef.Department[]> GetAllDepartmentAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/GetEmpByID", ReplyAction="http://tempuri.org/I_Employee_Service/GetEmpByIDResponse")]
-        WebClient.ServiceRef.Emp GetEmpByID(string EMP_ID);
+        WebClient.ServiceRef.Emp GetEmpByID(string Emp_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/GetEmpByID", ReplyAction="http://tempuri.org/I_Employee_Service/GetEmpByIDResponse")]
-        System.Threading.Tasks.Task<WebClient.ServiceRef.Emp> GetEmpByIDAsync(string EMP_ID);
+        System.Threading.Tasks.Task<WebClient.ServiceRef.Emp> GetEmpByIDAsync(string Emp_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/GetDeptByID", ReplyAction="http://tempuri.org/I_Employee_Service/GetDeptByIDResponse")]
         WebClient.ServiceRef.Department GetDeptByID(string DP_ID);
@@ -180,34 +180,34 @@ namespace WebClient.ServiceRef {
         System.Threading.Tasks.Task<WebClient.ServiceRef.Department> GetDeptByIDAsync(string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/InsertEmp", ReplyAction="http://tempuri.org/I_Employee_Service/InsertEmpResponse")]
-        void InsertEmp(string EMP_ID, string Name, string DP_ID);
+        void InsertEmp(string Emp_ID, string Emp_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/InsertEmp", ReplyAction="http://tempuri.org/I_Employee_Service/InsertEmpResponse")]
-        System.Threading.Tasks.Task InsertEmpAsync(string EMP_ID, string Name, string DP_ID);
+        System.Threading.Tasks.Task InsertEmpAsync(string Emp_ID, string Emp_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/InsertDept", ReplyAction="http://tempuri.org/I_Employee_Service/InsertDeptResponse")]
-        void InsertDept(string DP_ID, string Name);
+        void InsertDept(string DP_ID, string DP_Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/InsertDept", ReplyAction="http://tempuri.org/I_Employee_Service/InsertDeptResponse")]
-        System.Threading.Tasks.Task InsertDeptAsync(string DP_ID, string Name);
+        System.Threading.Tasks.Task InsertDeptAsync(string DP_ID, string DP_Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/UpdateEmp", ReplyAction="http://tempuri.org/I_Employee_Service/UpdateEmpResponse")]
-        void UpdateEmp(string EMP_ID, string Name, string DP_ID);
+        void UpdateEmp(string Emp_ID, string Emp_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/UpdateEmp", ReplyAction="http://tempuri.org/I_Employee_Service/UpdateEmpResponse")]
-        System.Threading.Tasks.Task UpdateEmpAsync(string EMP_ID, string Name, string DP_ID);
+        System.Threading.Tasks.Task UpdateEmpAsync(string Emp_ID, string Emp_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/UpdateDept", ReplyAction="http://tempuri.org/I_Employee_Service/UpdateDeptResponse")]
-        void UpdateDept(string Name, string DP_ID);
+        void UpdateDept(string DP_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/UpdateDept", ReplyAction="http://tempuri.org/I_Employee_Service/UpdateDeptResponse")]
-        System.Threading.Tasks.Task UpdateDeptAsync(string Name, string DP_ID);
+        System.Threading.Tasks.Task UpdateDeptAsync(string DP_Name, string DP_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/Delete_Emp", ReplyAction="http://tempuri.org/I_Employee_Service/Delete_EmpResponse")]
-        int Delete_Emp(string EMP_ID);
+        int Delete_Emp(string Emp_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/Delete_Emp", ReplyAction="http://tempuri.org/I_Employee_Service/Delete_EmpResponse")]
-        System.Threading.Tasks.Task<int> Delete_EmpAsync(string EMP_ID);
+        System.Threading.Tasks.Task<int> Delete_EmpAsync(string Emp_ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/I_Employee_Service/Delete_Dept", ReplyAction="http://tempuri.org/I_Employee_Service/Delete_DeptResponse")]
         int Delete_Dept(string DP_ID);
@@ -259,12 +259,12 @@ namespace WebClient.ServiceRef {
             return base.Channel.GetAllDepartmentAsync();
         }
         
-        public WebClient.ServiceRef.Emp GetEmpByID(string EMP_ID) {
-            return base.Channel.GetEmpByID(EMP_ID);
+        public WebClient.ServiceRef.Emp GetEmpByID(string Emp_ID) {
+            return base.Channel.GetEmpByID(Emp_ID);
         }
         
-        public System.Threading.Tasks.Task<WebClient.ServiceRef.Emp> GetEmpByIDAsync(string EMP_ID) {
-            return base.Channel.GetEmpByIDAsync(EMP_ID);
+        public System.Threading.Tasks.Task<WebClient.ServiceRef.Emp> GetEmpByIDAsync(string Emp_ID) {
+            return base.Channel.GetEmpByIDAsync(Emp_ID);
         }
         
         public WebClient.ServiceRef.Department GetDeptByID(string DP_ID) {
@@ -275,44 +275,44 @@ namespace WebClient.ServiceRef {
             return base.Channel.GetDeptByIDAsync(DP_ID);
         }
         
-        public void InsertEmp(string EMP_ID, string Name, string DP_ID) {
-            base.Channel.InsertEmp(EMP_ID, Name, DP_ID);
+        public void InsertEmp(string Emp_ID, string Emp_Name, string DP_ID) {
+            base.Channel.InsertEmp(Emp_ID, Emp_Name, DP_ID);
         }
         
-        public System.Threading.Tasks.Task InsertEmpAsync(string EMP_ID, string Name, string DP_ID) {
-            return base.Channel.InsertEmpAsync(EMP_ID, Name, DP_ID);
+        public System.Threading.Tasks.Task InsertEmpAsync(string Emp_ID, string Emp_Name, string DP_ID) {
+            return base.Channel.InsertEmpAsync(Emp_ID, Emp_Name, DP_ID);
         }
         
-        public void InsertDept(string DP_ID, string Name) {
-            base.Channel.InsertDept(DP_ID, Name);
+        public void InsertDept(string DP_ID, string DP_Name) {
+            base.Channel.InsertDept(DP_ID, DP_Name);
         }
         
-        public System.Threading.Tasks.Task InsertDeptAsync(string DP_ID, string Name) {
-            return base.Channel.InsertDeptAsync(DP_ID, Name);
+        public System.Threading.Tasks.Task InsertDeptAsync(string DP_ID, string DP_Name) {
+            return base.Channel.InsertDeptAsync(DP_ID, DP_Name);
         }
         
-        public void UpdateEmp(string EMP_ID, string Name, string DP_ID) {
-            base.Channel.UpdateEmp(EMP_ID, Name, DP_ID);
+        public void UpdateEmp(string Emp_ID, string Emp_Name, string DP_ID) {
+            base.Channel.UpdateEmp(Emp_ID, Emp_Name, DP_ID);
         }
         
-        public System.Threading.Tasks.Task UpdateEmpAsync(string EMP_ID, string Name, string DP_ID) {
-            return base.Channel.UpdateEmpAsync(EMP_ID, Name, DP_ID);
+        public System.Threading.Tasks.Task UpdateEmpAsync(string Emp_ID, string Emp_Name, string DP_ID) {
+            return base.Channel.UpdateEmpAsync(Emp_ID, Emp_Name, DP_ID);
         }
         
-        public void UpdateDept(string Name, string DP_ID) {
-            base.Channel.UpdateDept(Name, DP_ID);
+        public void UpdateDept(string DP_Name, string DP_ID) {
+            base.Channel.UpdateDept(DP_Name, DP_ID);
         }
         
-        public System.Threading.Tasks.Task UpdateDeptAsync(string Name, string DP_ID) {
-            return base.Channel.UpdateDeptAsync(Name, DP_ID);
+        public System.Threading.Tasks.Task UpdateDeptAsync(string DP_Name, string DP_ID) {
+            return base.Channel.UpdateDeptAsync(DP_Name, DP_ID);
         }
         
-        public int Delete_Emp(string EMP_ID) {
-            return base.Channel.Delete_Emp(EMP_ID);
+        public int Delete_Emp(string Emp_ID) {
+            return base.Channel.Delete_Emp(Emp_ID);
         }
         
-        public System.Threading.Tasks.Task<int> Delete_EmpAsync(string EMP_ID) {
-            return base.Channel.Delete_EmpAsync(EMP_ID);
+        public System.Threading.Tasks.Task<int> Delete_EmpAsync(string Emp_ID) {
+            return base.Channel.Delete_EmpAsync(Emp_ID);
         }
         
         public int Delete_Dept(string DP_ID) {

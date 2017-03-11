@@ -19,9 +19,9 @@ namespace Employee_Service
             return Context.Departments.ToList();
         }
 
-        public int Delete_Emp(string EMP_ID)
+        public int Delete_Emp(string Emp_ID)
         {
-            int ID = int.Parse(EMP_ID);
+            int ID = int.Parse(Emp_ID);
             var employee = Context.Emps.Find(ID);
             if (employee != null)
             {
@@ -51,9 +51,9 @@ namespace Employee_Service
             }
         }
 
-        public Emp GetEmpByID(string EMP_ID)
+        public Emp GetEmpByID(string Emp_ID)
         {
-            var id = int.Parse(EMP_ID);
+            var id = int.Parse(Emp_ID);
             var emp = Context.Emps.Find(id);
             return emp;
 
@@ -66,19 +66,19 @@ namespace Employee_Service
             return dep;
         }
 
-        public void InsertEmp(string EMP_ID, string Name, string DP_ID)
+        public void InsertEmp(string Emp_ID, string Emp_Name, string DP_ID)
         {
-            var x = int.Parse(EMP_ID);
+            var x = int.Parse(Emp_ID);
             var y = int.Parse(DP_ID);
-            Emp emp = new Emp() { Emp_ID = x, Emp_Name = Name, DP_ID = y };
+            Emp emp = new Emp() { Emp_ID = x, Emp_Name = Emp_Name, DP_ID = y };
             Context.Emps.Add(emp);
             Context.SaveChanges();
         }
 
-        public void InsertDept(string DP_ID, string Name)
+        public void InsertDept(string DP_ID, string DP_Name)
         {
             var x = int.Parse(DP_ID);
-            Department dep = new Department() { DP_ID = x, DP_Name = Name };
+            Department dep = new Department() { DP_ID = x, DP_Name = DP_Name };
             Context.Departments.Add(dep);
             Context.SaveChanges();
         }
@@ -86,26 +86,26 @@ namespace Employee_Service
 
 
 
-        public void UpdateEmp(string EMP_ID, string Name, string DP_ID)
+        public void UpdateEmp(string Emp_ID, string Emp_Name, string DP_ID)
         {
-            var x = int.Parse(EMP_ID);
+            var x = int.Parse(Emp_ID);
             var y = int.Parse(DP_ID);
             var employee = Context.Emps.Find(x);
             if (employee != null)
             {
-                employee.Emp_Name = Name;
+                employee.Emp_Name = Emp_Name;
                 employee.DP_ID = y;
                 Context.SaveChanges();
             }
         }
 
-        public void UpdateDept(string Name, string DP_ID)
+        public void UpdateDept(string DP_Name, string DP_ID)
         {
             var y = int.Parse(DP_ID);
             var dep = Context.Departments.Find(y);
             if (dep != null)
             {
-                dep.DP_Name = Name;
+                dep.DP_Name = DP_Name;
                 Context.SaveChanges();
             }
         }

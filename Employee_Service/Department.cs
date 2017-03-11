@@ -17,10 +17,10 @@ namespace Employee_Service
         }
 
         [Key]
-        [DataMember(Name = "Dept_ID", Order = 0)]
+        [DataMember(Name = "DP_ID", Order = 0)]
         public int DP_ID { get; set; }
 
-        [DataMember(Name = "Dept_Name", Order = 1)]
+        [DataMember(Name = "DP_Name", Order = 1)]
         [Required]
         [StringLength(50)]
         public string DP_Name { get; set; }

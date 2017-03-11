@@ -28,7 +28,7 @@
   <xs:element name="GetEmpByID">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EMP_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_ID" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,8 +56,8 @@
   <xs:element name="InsertEmp">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EMP_ID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_Name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DP_ID" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -71,7 +71,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="DP_ID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DP_Name" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,8 +83,8 @@
   <xs:element name="UpdateEmp">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EMP_ID" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_Name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DP_ID" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -97,7 +97,7 @@
   <xs:element name="UpdateDept">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DP_Name" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="DP_ID" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -110,7 +110,7 @@
   <xs:element name="Delete_Emp">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EMP_ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Emp_ID" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

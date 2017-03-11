@@ -7,6 +7,7 @@ using WebClient.ServiceRef;
 namespace WebClient
 {
     public class BusinessLayer
+
     {
         ServiceRef.I_Employee_ServiceClient c = new ServiceRef.I_Employee_ServiceClient("WSHttpBinding_I_Employee_Service");
 
@@ -19,9 +20,9 @@ namespace WebClient
             return c.GetAllDepartment().ToList();
         }
 
-        public int Delete_Emp(int EMP_ID)
+        public int Delete_Emp(int Emp_ID)
         {
-            string str = EMP_ID.ToString();
+            string str =(Emp_ID).ToString();
             int affected= c.Delete_Emp(str);
             return affected;
         }
@@ -33,9 +34,9 @@ namespace WebClient
             return affected;
         }
 
-        public Emp GetEmpByID(int EMP_ID)
+        public Emp GetEmpByID(int Emp_ID)
         {
-            string str = EMP_ID.ToString();
+            string str = Emp_ID.ToString();
             return c.GetEmpByID(str);
         }
 
@@ -45,30 +46,30 @@ namespace WebClient
             return c.GetDeptByID(str);
         }
 
-        public void InsertEmp(int EMP_ID, string Name,int DP_ID)
+        public void InsertEmp(int Emp_ID, string Emp_Name, int DP_ID)
         {
-            string emp = EMP_ID.ToString();
+            string emp = Emp_ID.ToString();
             string dep = DP_ID.ToString();
-            c.InsertEmp(emp, Name, dep);
+            c.InsertEmp(emp, Emp_Name, dep);
         }
 
-        public void InsertDept(int DP_ID, string Name)
+        public void InsertDept(int DP_ID, string DP_Name)
         {
             string dep = DP_ID.ToString();
-            c.InsertDept(dep, Name);
+            c.InsertDept(dep, DP_Name);
         }
 
-        public void UpdateEmp(int EMP_ID, string Name, int DP_ID)
+        public void UpdateEmp(int Emp_ID, string Emp_Name, int DP_ID)
         {
-            string emp = EMP_ID.ToString();
+            string emp = Emp_ID.ToString();
             string dep = DP_ID.ToString();
-            c.UpdateEmp(emp, Name, dep);
+            c.UpdateEmp(emp, Emp_Name, dep);
         }
 
-        public void UpdateDept(string Name, int DP_ID)
+        public void UpdateDept(string DP_Name, int DP_ID)
         {
             string dep = DP_ID.ToString();
-            c.UpdateDept(Name, dep);
+            c.UpdateDept(DP_Name, dep);
         }
 
 

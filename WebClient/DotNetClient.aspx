@@ -9,15 +9,24 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <style type="text/css">
         .auto-style1 {
-            width: 199px;
+            width: 192px;
+        }
+        .auto-style2 {
+            width: 128px;
+        }
+        .auto-style3 {
+            direction: ltr;
+        }
+        .auto-style4 {
+            width: 100%;
         }
     </style>
 </head>
 <body>
 	<form id="form1" runat="server">
 	<div id="header">
-		<h1><a href="index.html" id="sitetitle">Business Analyst</a></h1>
-		<ul>
+		<h1><a href="index.html" id="sitetitle">Service</a></h1>
+		<!--<ul>
 			<li>
 				<a href="index.html">Home</a>
 			</li>
@@ -33,108 +42,181 @@
 			<li>
 				<a href="contact.html">Contact</a>
 			</li>
-		</ul>
+		</ul>-->
 	</div>
 	<div id="body">
 		<div id="about">
             <div>
 				<h2>Employee</h2>
-    <table style="width: 100%;">
+    <table class="auto-style4">
         <tr>
             <td class="auto-style1">Employee ID:</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="emp_id" runat="server"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">Employee Name:</td>
+            <td>
+                <asp:TextBox ID="emp_name" runat="server"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">Department ID:</td>
+            <td>
+                <asp:TextBox ID="dept_id" runat="server"></asp:TextBox>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">&nbsp;</td>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="height: 26px" Text="Insert" />
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td colspan="3">
-                <asp:GridView ID="GridView1" runat="server">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="EService" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:TemplateField HeaderText="Emp_ID">
+                            <ItemTemplate>
+                                <div class="auto-style3">
+                                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("Emp_ID") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Emp_Name">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Emp_Name") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Emp_Name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="DP_ID">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style2" Text='<%# Bind("DP_ID") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:CommandField ShowEditButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
+                <asp:ObjectDataSource ID="EService" runat="server" DeleteMethod="Delete_Emp" InsertMethod="InsertEmp" SelectMethod="GetAllEmp" TypeName="WebClient.BusinessLayer" UpdateMethod="UpdateEmp">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Emp_ID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="Emp_ID" Type="Int32" />
+                        <asp:Parameter Name="Emp_Name" Type="String" />
+                        <asp:Parameter Name="DP_ID" Type="Int32" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Emp_ID" Type="Int32" />
+                        <asp:Parameter Name="Emp_Name" Type="String" />
+                        <asp:Parameter Name="DP_ID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:ObjectDataSource>
             </td>
         </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+        </table>
 				
 			</div>
 			<div>
 				<h2>Department</h2>
                 <table style="width: 100%;">
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td class="auto-style2">Department ID:</td>
+                        <td>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                        </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
+                        <td class="auto-style2">Department Name:</td>
+                        <td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        </td>
                         <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">&nbsp;&nbsp;</td>
+                        <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insert" />
+                        </td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                <Columns>
+                                    <asp:TemplateField HeaderText="ID">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Name">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("DP_Name") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("DP_Name") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:CommandField ShowEditButton="True" />
+                                    <asp:CommandField ShowDeleteButton="True" />
+                                </Columns>
+                                <EditRowStyle BackColor="#999999" />
+                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                            </asp:GridView>
+                            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete_Dep" InsertMethod="InsertDept" SelectMethod="GetAllDep" TypeName="WebClient.BusinessLayer" UpdateMethod="UpdateDept">
+                                <DeleteParameters>
+                                    <asp:Parameter Name="DP_ID" Type="Int32" />
+                                </DeleteParameters>
+                                <InsertParameters>
+                                    <asp:Parameter Name="DP_ID" Type="Int32" />
+                                    <asp:Parameter Name="DP_Name" Type="String" />
+                                </InsertParameters>
+                                <UpdateParameters>
+                                    <asp:Parameter Name="DP_Name" Type="String" />
+                                    <asp:Parameter Name="DP_ID" Type="Int32" />
+                                </UpdateParameters>
+                            </asp:ObjectDataSource>
+                        </td>
                     </tr>
                 </table>
 				
 			</div>
-			<div>
-				<h2>We Have More Templates for You</h2>
-				<p>
-					Looking for more templates? Just browse through all our <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> and find what you&#39;re looking for. But if you don&#39;t find any website template you can use, you can try our <a href="http://www.freewebsitetemplates.com/freewebdesign/">Free Web Design</a> service and tell us all about it. Maybe you&#39;re looking for something different, something special. And we love the challenge of doing something different and something special.
-				</p>
-			</div>
-			<div>
-				<h2>Be Part of Our Community</h2>
-				<p>
-					If you&#39;re experiencing issues and concerns about this website template, join the discussion <a href="http://www.freewebsitetemplates.com/forums/">on our forum</a> and meet other people in the community who share the same interests with you.
-				</p>
-				<p>
-					<span>Template details</span> Design version 3<br>Code version 2<br>Website Template details, discussion and updates for this <a href="http://www.freewebsitetemplates.com/discuss/businessanalystwebsitetemplate/">Business Analyst Website Template</a>.<br>Website Template design by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a>.<br>Please feel free to remove some or all the text and links of this page and replace it with your own About content.
-				</p>
-			</div>
+			
 		</div>
-		<div id="testimonials">
-			<h2>Testimonials</h2>
-			<ul>
-				<li>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sodales semper. Cras libero lorem, posuere ac pharetra sed, porttitor ac elit. Etiam sed sem nec orci molestie convallis. Donec suscipit fringilla ipsum, id iaculis ante dignissim sit amet. Morbi venenatis tincidunt turpis, eget fermentum orci tristique nec. Suspendisse viverra mollis velit sed adipiscing. Maecenas quis erat felis, nec rutrum magna.
-					</p>
-					<span>- Happy Client</span>
-				</li>
-				<li>
-					<p>
-						Mauris turpis est, sagittis at luctus in, faucibus at odio. Curabitur ac arcu et mi convallis lacinia ac quis odio. Pellentesque vitae arcu nibh. Nulla nec dapibus ligula. Suspendisse non neque et ante egestas ornare a quis diam. Praesent ac metus elit. Maecenas gravida tortor eu magna eleifend sed consectetur urna lacinia. Morbi tristique augue eget nisi blandit laoreet. Sed luctus dolor eget nisi aliquam eu condimentum elit accumsan. Suspendisse potenti.
-					</p>
-					<span>- Big Corporation Client</span>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<p>
-						Sed aliquam massa nec mauris accumsan interdum. Etiam pretium, risus eget sollicitudin laoreet, nisl massa venenatis sem, condimentum rhoncus libero leo ut risus. Aliquam erat volutpat. Mauris ac libero odio, sit amet fringilla felis. Integer pulvinar sodales nibh, sed consequat magna aliquam quis. Maecenas auctor magna sit amet lorem tempus volutpat sit amet eu neque.
-					</p>
-					<span>- Satisfied Customer</span>
-				</li>
-				<li>
-					<p>
-						Donec dignissim vestibulum pretium. Sed congue sagittis malesuada. Praesent eu justo at dui tincidunt viverra et sed nisi. Integer eu ante nunc. Nam accumsan interdum egestas. Ut lectus nunc, adipiscing nec sagittis id, eleifend vitae massa. Integer quis arcu et ligula feugiat posuere. Proin eu cursus sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
-					</p>
-					<span>- Entrepreneur</span>
-				</li>
-			</ul>
-		</div>
-	</div>
+		
 	<div id="footer">
 		<div>
 			<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
